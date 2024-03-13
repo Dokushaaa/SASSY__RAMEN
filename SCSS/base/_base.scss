@@ -31,13 +31,6 @@ body{
     
     
 }
-.container1{
-    max-width: 98rem;
-    padding: 0 1.6rem;
-    margin:0 auto;
-    background-color:$clr-light;
-    
-}
 body.open{
  overflow: hidden;
 
@@ -47,11 +40,11 @@ html{
 }
 a{
     text-decoration: none;
-    color: $clr-dark;
+    color: $clr-light;
 }
 p{
     font-size: clamp(1.4rem, 6vw,1.6rem);
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.15rem;
     text-wrap: balance;
     color: $clr-light;
 }
@@ -79,6 +72,7 @@ h4{
 }
 
 ul{
+    text-transform: none;
     list-style: none;
     li{
         color: $clr-dark;
@@ -102,6 +96,11 @@ label, input ,textarea, i{
     color:$clr-dark;
     font-family:"Clash-Display-Regular" ;
 }
-
+small{
+    color: $clr-light;
+}
+i{
+    color:$clr-dark;
+}
 
     
