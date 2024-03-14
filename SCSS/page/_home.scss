@@ -2,333 +2,185 @@
 @use "../base/" as *;
 @use "../components/" as *;
 @use "../layout/" as *;
-
-.header__banner{
-   h1,p{
-    color: $clr-dark;
-   } 
-}
-.banner{
-    color: $clr-dark;
-    border: 2px transparent solid; 
-    border-radius: 2.5rem;
-    border-top: none;
-    &__wrapper{
-
-        .banner__content{
-            small{
-                color: $clr-dark;
+.hero__banner{
+    .banner__wrapper{
+        @include mediaDeskQuery{
+           .hero_banner{.banner__content{
+            padding-bottom: 5rem;
+            h1{
+                line-height: unset;
             }
-            @include mediaQuery{
-                @include d-flex(center, flex-end);
+            .a10rem{
+                // font-size: 1rem;
+                // height: 10rem;
+                // width: 40rem;
+                // word-spacing: 10rem;
+                visibility: hidden;
+                opacity: 0;
+            }
+            }
+        }
+        .ramen__banner{
+           img{
+            display: block;
+            width: 40rem;
+            position: relative;
+            right: 80%;
+            bottom:100%;
+            transform:translate(-50%,100%);
+            
+           }
+        }
+        }
+        .banner__content{
+            text-align: center;
+            h1{
+                line-height: 4rem;
+            }
+            p{
+                line-height: 0.1rem;
+                font-size: 2.5rem;
+            }
+        }
+        .ramen__banner{
+           
+            img{
+                transform: translate(32.5rem,5rem);
+                &:hover{
+                    filter: brightness(90%);
+                    transform: scale(1.025) translate(32.5rem,4.5rem); 
+                }
+            }
+        }
+    }
+}
+
+
+// order:
+.order{
+    background-color: #fbf4ec;
+    &__wrapper{
+        
+        .order__text{
+            padding-bottom: 2.5rem;
+            h2{
+                color: $clr-accent;
+                text-align: center;
+            }
+        }
+        .order__clickables{
+            i{
+                color: $clr-accent;
+                font-size: 4rem;
+                transform: translate(5rem, 7.5rem);
+            }
+            @include grid(5);
+            &__card{
                 
+                p{
+                    color: $clr-dark;
+                    text-align: center;
+                    font-size: 2.2rem;
+                    font-weight: bolder;
+                }
+               
+            }
+            .order__clickables__card:nth-of-type(3){
+
+                img{
+                    height: 15rem;
+                }
+            }
+        }
+    }
+}
+// ramen menu
+.menu{
+    background-image: url('../../img/character_pattern_2X.jpg');
+    .menu__wrapper{
+        padding-bottom: 5rem;
+        button{
+           display: block;
+           transform: translateX(40rem);
+            width: 25rem;
+            height: 5rem;
+            text-transform: uppercase;
+            color: $clr-light;
+            background-color: #433D3C;
+            font-weight: 700;
+            &:hover{
+                background-color: $clr-accent;
+                border: none;
             }
           
-            }
             
-            .banner__btns{
-               button{
-                margin-bottom:2.5rem;
-                i{
-                    padding-right:1rem;
+        }
+        .menu__title{
+            h2{
+                padding: 7.5rem 0;
+                text-align: center;
+                text-transform: uppercase;
+                word-spacing: 1rem;
+                font-size: 5rem;
+            }
+        }
+        .menu__content{
+            @include grid(2);
+            column-gap: 10rem;
+            row-gap: 5rem;
+           
+            .menu__card{
+                @include grid(2);
+                
+               &__info{
+                width: 20rem;
+                h3,p,h4{
+                    color: $clr-dark;
+                    font-size: 2rem;
+                }
+                small{
+                    color:$clr-accent;
+                    font-size: 2.5rem;
+                    font-weight: 800;
+                }
+                h4{
+                    padding-bottom: 4rem;
                 }
                }
-                button:first-of-type{
-                    width: 100%;
-                    height: 6rem;
-                    color:$clr-light;
-                    border: 10px solid orange;
-                    border-radius: 30px;
-                    background-color: orange;
-                    font-weight: 800;
+               &__img{
+                img{
+                border:1px solid transparent;
+                border-radius: 50%;
                 }
-                button:last-of-type{
-                    width: 100%;
-                    height: 6rem;
-                    color:$clr-dark;
-                    border: 2px solid orange;
-                    border-radius: 30px;
-                    background-color: transparent;
-                    font-weight: 800;
-                }
+               }
                 
-                padding: 1rem;
-                
-                button:first-of-type{
-                    width:20rem;
-                    height: 6rem;
-                    color:$clr-light;
-                    border: 10px solid orange;
-                    border-radius: 30px;
-                    background-color: orange;
-                    font-weight: 800;
-                    
-                }
-                button:last-of-type{
-                    width:20rem;
-                    height: 6rem;
-                    color:$clr-dark;
-                    border: 2px solid orange;
-                    border-radius: 30px;
-                    background-color: transparent;
-                    font-weight: 800;
-                }
-                }
-            }
-        }
-        .banner__grid{
-            @include mediaQuery{
-                @include unevenGrid(1fr 2fr, 5rem);
-                p{
-                    width:40rem;
-                }
-                .banner__imgwotxt{
-                    img{
-                        width: 80rem;
-                        height: 45rem;
-                    }
-                    h2{
-                        color: $clr-dark;
-                        text-align: center;
-                    }
-                }
-            }
-        }
-
-    
-// tally total
-.tally{
-    padding: 5rem 2.5rem ;
-    &__wrapper{
-        border: 2px solid transparent;
-        border-radius: 10px;
-        background-color: $clr-secondary;
-        .tally__cards{
-            padding:2rem;
-            @include grid(1);
-            @include mediaQuery{
-                @include grid(4);
-            }
-            .tally__content{
-                h2,h5,p{
-                    text-align: center;
-                }
             }
         }
     }
 }
-// why choose us{
-    .why{
-        .why__wrapper{
-            .why__content{
-                text-align: center;
+// advertisement
+.advertisement{
+    background-image: url('../../img/texture_pattern_2X.jpg');
+    .advertisement__wrapper{
+        .advertisement__title{
+            padding: 5rem;
+            text-align: center;
+            h2{
+                color: $clr-accent;
+            }
+            p{
+                color:#f6ad49;
             }
         }
-    }
-
-    .perks{
-        padding: 5rem 2.5rem ;
-        &__wrapper{
-            border: 2px solid transparent;
-            border-radius: 10px;
-             background-color: $clr-secondary;
-            .perks__content{
-                padding-top: 5rem;
-                text-align: center;
-                justify-content: center;
-                align-items: center;
-                max-height: 160rem;
-                @include mediaQuery{
-                    margin-bottom: unset;
-                    padding:2rem;
-                    text-align: left;
-                   @include unevenGrid(2fr 1fr, 5rem);
-                   
-                   height:55rem;
-                   .perks__text{
-                    padding: unset;
-                    .perks__card__text{
-                        h3,i{
-                            
-                            font-size: 2rem;
-                            font-family: "Clash-Display-Bold","Font Awesome 6 Free";
-                        i{
-                            
-                             margin-right: 2rem;
-                        }
-                        }
-                    }
-                   }
-                   .perks__img{
-                    padding: unset;
-                    align-items: center;
-                    justify-self: center;
-                    img{
-                        margin: 0 auto;
-                        height: 55rem
-                    }
-                   }
-                 
-                }
-                
-               
-                .perks__text{
-                    @include mediaQuery{
-                        @include grid(2);
-                    }
-                    i{
-                        color: $clr-dark;
-                        font-size: 5rem;
-                        border: 1px solid $clr-light;
-                        border-radius: 100%;
-                        background-color: $clr-accent;
-                    }
-                }
-                .perks__img{
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto;
-                  
-                    width: 90%;
-                    @include mediaQuery{
-                        display: unset;
-                        width: unset;
-                    }
-                    
-                   
-                }
-            }       
-        }
-    }
-// trainers
-.trainers{
-    .trainers__text{
-        text-align: center;
-        padding-bottom: 1rem;
-    }
-
-    &__wrapper{
-        @include mediaQuery{
+        .advertisement__card{
             @include grid(3);
-            .trainers__img__container{
-                .trainers__img{
-                    h3{
-                        width:77.5%;
-                        border: 1px solid transparent;
-                        border-radius: 10px;
-                        background-color: $clr-secondary;
-                        padding: 2rem;
-                       }
-                }
-            }
-        }
-        .trainers__img__containers{
-        border: 1px solid transparent;
-        border-radius: 10px;
-           background-color: $clr-secondary;
-        }
-        .trainers__img{
-           @include d-flex(center,center);
-           padding-bottom: 2rem;
-           flex-direction: column;
-           text-align: center;
-           img{
-            border: 1px solid transparent;
-            border-radius: 10px;
-            background-color: $clr-secondary;
-           }
-           h3{
-            width:82.5%;
-            border: 1px solid transparent;
-            border-radius: 10px;
-            background-color: $clr-secondary;
-            padding: 2rem;
+            gap: 0rem;
+            img{
+           filter: brightness(80%);
+           &:hover{
+            filter:brightness(100%);
            }
            
-        }
-    }
-}
-// reviews
-.reviews{
-    padding:1.5rem;
-    &__content{
-        @include mediaQuery{
-            @include grid(2);
-            max-height: 50rem ;
-            .reviews__right{
-                .reviews__author{
-                    &__info{
-                        padding-top: 2rem;
-                    }
-                }
-                img{
-                    height: 20rem;
-                    border-radius: 50%;
-                    
-                }
-                .reviews__grid{
-                    @include d-flex(flex-start, center);
-                }
-              
-            }
-        }
-        border: 1px solid transparent;
-        border-radius: 10px;
-        background-color: $clr-secondary;
-        @include d-flex(center,center);
-        flex-direction: column;
-        .reviews__left{
-            text-align: center;
-            .reviews__btn{
-                @include d-flex(center, center);
-                gap:2rem;
-                i{
-                    padding: 1rem 0;
-                    color: $clr-light;
-                    font-size: 2.5rem;
-                    width: 10rem;
-                    
-                    border: 1px solid transparent;
-                    border-radius: 40px;
-                    background-color: $clr-accent;
-                   
-                   
-                }
-            }
-        }
-        .reviews__right{
-            img{
-                padding: 2rem 0 4rem 0;
-            }
-            p:first-of-type{
-                text-align: justify;
-                padding: 2.5rem 2rem;
-            }
-            h4, p:last-of-type{
-                text-align: center;
-            }
-        }
-    }
-}
-
-.cta{
-    
-    background-image:url('https://via.placeholder.com/1000x1000');
-    height: 40rem;
-    button{
-        width:20rem;
-                    height: 6rem;
-                    color:$clr-light;
-                    border: 10px solid orange;
-                    border-radius: 30px;
-                    background-color: orange;
-                    font-weight: 800;
-    }
-    @include mediaQuery{
-        height:45rem;
-        .cta__content{
-            h2{
-                padding-top: 5rem;
             }
         }
     }

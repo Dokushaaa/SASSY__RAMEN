@@ -1,66 +1,40 @@
 @use '../abstract/' as *;
 
 .footer{
+    background-color: #433d3c;
+    padding: 2.5rem 0 1rem 0;
     &__wrapper{
-        padding:0 2rem;
-        @include mediaQuery{
-            @include unevenGrid(1fr 2fr, 2rem);
-            .footer__socials{
-                max-width: 40rem;
-                text-align: left;
+        padding-top: 5rem;
+        @include unevenGrid(1fr 2fr 1fr, 5rem);
+
+
+        .footer__socials{
+            &__media{
+                @include d-flex(space-around, center);
+                li{
+                    i{
+                        color:#f6ad49;
+                        font-size: 2.5rem;
+                    }
+                }
             }
-        }
-    }
-    &__socials{
-        h3{
-            
-            color: $clr-accent;
-            text-shadow: 0px 30px $clr-accent;
-            padding-bottom: 2rem;
-        
-        }
-        .social__links{
-        @include d-flex(center, center);
-        gap: 5rem;
-        i{
-            padding: 2rem 0;
-            font-size: 4rem;
-            color: $clr-light;
-        }
-        @include mediaQuery{
-            @include d-flex(flex-start, center);
-        }
-    }
-    }
-    &__links{
-        .footer__box:nth-of-type(3){
-            
-               i{
-                font-size: auto;
-                text-transform: none;
-               }
             
         }
-        @include grid(2);
-        @include mediaQuery{
-            @include grid(4);
-            gap:4rem;
-        }
-        li, i{
-            
-            color: $clr-light;
-            text-transform: none;
-            font-family: "Clash-Display-Regular","Font Awesome 6 Free";
-           i{
-            margin-right: 2rem;
-           }
-        }
-        h4{
-            padding: 2rem 0;
-        }
-        img{
-            padding-bottom: 1rem;
-            filter: brightness(100%);
+       
+        .footer__onlineorder{
+            button{
+                height: 4.5rem;
+                width: 17.5rem;
+                background-color: $clr-yellow;
+                font-size: 2rem;
+                font-weight: 700;
+                border-radius: 5px;
+                transition: 0.5s ease;
+                &:hover{
+                 background-color: $clr-accent; 
+                }
+                
+            }
         }
     }
 }

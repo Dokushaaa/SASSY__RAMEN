@@ -1,117 +1,73 @@
 @use "../abstract/" as *;
-.header__banner{
-   margin-top: 2.5rem;
-    border: 2px transparent solid; 
-    border-radius: 2.5rem;
+.header__HERO{ 
+   background-image: url('../../img/wood.jpg');
+   @include mediaDeskQuery{
+    height: 50rem;
+   }
 .header{
-    @include roundedContainer;
-    padding: 1.5rem 0;
-    &__wrapper{
-        .barbar, .hidden{
-            @include mediaQuery{
-                visibility: hidden;
-                opacity: 0;
-
-            }
-        }
-        .iconic{
-            font-size: 2.5rem;
-            letter-spacing: 0.6rem;
-            text-transform: none;
-
-        }
-        .memuuuuuuuuu{
-            .lighting__mode{
-                padding-right: 5rem;
-                @include mediaQuery{
-                    padding-left: 2.5rem;
-                }
-            }
-            display: flex;
-            grid-template-columns: 1fr 1fr 1fr;
-            .signUpHere{
-                visibility: hidden;
-                opacity: 0;
-                width: 100%;
-                font-size: 0.001;
-                @include mediaQuery{
-                    visibility: visible;
-                    opacity: 1;
-                    font-size: 2rem;
-                    border: 10px solid $clr-accent;
-                    border-radius: 8px;
-                    background-color: $clr-accent;
-                    
-                }
-            }
-            .barbar{
-                font-size: 3rem;
-                @include mediaQuery{
-                    font-size: 0.1rem;
-                }
-            }
-         
-        }
-        a{
-            font-size:2rem;
-        }
-        padding: 1rem 4rem;
-        
-        @include d-flex(space-between, center);
-        button{
-            font-size: 2rem;
-            border: none;
-            background: transparent;
-        
-        }
-        ul.open{
-            visibility: visible;
-            opacity: 1;
-        }
+    
+   &__wrapper{
+    padding: 2rem;
+    @include d-flex(space-evenly,center);
+    @include mediaDeskQuery{
+        padding: 4rem;
         ul{
-            @include mediaQuery{
-                position: static;
-                background-color: unset;
-                padding: unset;
-                width: auto;
-                height: unset;
-                flex-direction: row;
-                visibility: visible;
-                 opacity: 1;
-                 
-                li a{
-                    font-size: 2rem !important;
-                    color: $clr-light;
-                    transition:  300ms ease-in;
-                    border-bottom: 2px solid transparent;
-                    &:hover{
-                       border-color: $clr-accent;
-                    }
-                }
-            }
-            position: fixed;
-            background: $clr-light;
-            top: 11rem;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            z-index: 99999;
-            flex-direction: column;
-             justify-content: center;
-            align-items: center;
-            padding-top: 30%;
+            font-size: 0.1rem;
+            width: 0.1rem;
             visibility: hidden;
             opacity: 0;
-            transition: .5s ease;
+            
             li{
-                text-align: center;
-                color: $clr-dark;
                 a{
-                    font-size: 3rem;
-                    color: $clr-dark;
+                    transition: .5s ease;
+                    font-size: 0.5rem;
+                    
+                    &:hover{
+                        color: $clr-accent; 
+                       }
+                }
+            }
+        }
+        img{
+            padding-right:10rem;
+           
+        }
+        
+    }
+    ul{
+        li{
+            a{
+                transition: .5s ease;
+                font-size: 2rem;
+                &:hover{
+                    color: $clr-accent; 
+                   }
+            }
+        }
+    }
+    .logo{
+        filter: brightness(90%);
+        width: auto;
+        height:100px;
+            @include mediaDeskQuery{
+                width: unset;
+                height: 5rem;
+            }
+                }
+                button{
+                    height: 4.5rem;
+                    width: 17.5rem;
+                    background-color: $clr-yellow;
+                    font-size: 2rem;
+                    font-weight: 700;
+                    border-radius: 5px;
+                    transition: 0.5s ease;
+                    border: 1px solid transparent;
+                    &:hover{
+                     background-color: $clr-accent; 
                     }
+                    
                 }
             }
         }
     }
-}

@@ -4,6 +4,10 @@
     font-family: "Clash-Display-Regular";
     src: url('../../fonts/ClashDisplay-Regular.woff');
 }
+@font-face {
+    font-family: "Noto-Sans";
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet');
+}
 @font-face{
     font-family: "Clash-Display-Medium";
     src: url('../../fonts/ClashDisplay-Medium.woff');
@@ -16,18 +20,18 @@
 
 body{
     font-family:  "Clash-Display-Regular";
-    background-color:$clr-dark;
+    background-color:$clr-light;
     // background-color:red;
-    color:rgba($clr-light, 0.7);
+    color:rgba($clr-dark, 0.7);
     line-height: 1.6;
     font-size: 1.6rem;
     cursor: crosshair; 
 }
 .container{
-    max-width: 175rem;
+    max-width: 100rem;
     padding: 0 1.6rem;
     margin:0 auto;
-    background-color:$clr-dark;
+    
     
     
 }
@@ -36,7 +40,8 @@ body.open{
 
 }
 html{
-    font-size: 10px;
+    font-size: 10px; 
+    
 }
 a{
     text-decoration: none;
@@ -83,14 +88,15 @@ ul{
 }
 }
 img{
-    filter: brightness(50%);
+    filter: brightness(100%);
     &:hover{
-        filter: brightness(100%);
+        filter: brightness(90%);
         transform: scale(1.025); 
+       
     }
 }
 button{
-    color: $clr-dark;
+    color: $clr-light;
 }
 label, input ,textarea, i{
     color:$clr-dark;
@@ -100,7 +106,7 @@ small{
     color: $clr-light;
 }
 i{
-    color:$clr-dark;
+    color:$clr-light;
 }
 
     

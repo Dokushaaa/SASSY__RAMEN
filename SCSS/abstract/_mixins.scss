@@ -44,16 +44,12 @@
         @content;
     }
 }
-// medium query
-@mixin  mediaQuery__M($m-width:$md){
-    @media (min-width:$m-width){
+@mixin  mediaDeskQuery($m-width:$sm){
+    @media (max-width:$m-width){
         @content;
     }
 }
-// mixin for dekstop first to mobile second
-@mixin mediaQuery__Mobile($m-width:$xl){
-    
-}
+
 // even grid
 @mixin grid($cols: 1, $gap:1rem){
     display: grid;
