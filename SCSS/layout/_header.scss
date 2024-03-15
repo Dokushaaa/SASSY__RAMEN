@@ -1,73 +1,43 @@
 @use "../abstract/" as *;
-.header__HERO{ 
-   background-image: url('../../img/wood.jpg');
-   @include mediaDeskQuery{
-    height: 50rem;
-   }
 .header{
-    
-   &__wrapper{
-    padding: 2rem;
-    @include d-flex(space-evenly,center);
-    @include mediaDeskQuery{
-        padding: 4rem;
-        ul{
-            font-size: 0.1rem;
-            width: 0.1rem;
-            visibility: hidden;
-            opacity: 0;
-            
-            li{
-                a{
-                    transition: .5s ease;
-                    font-size: 0.5rem;
-                    
-                    &:hover{
-                        color: $clr-accent; 
-                       }
-                }
-            }
-        }
+    // box-shadow: 5px 10px $clr-secondary;
+    background-color: $clr-dark;
+    @include mediaQuery{
+      .header__wrapper{
         img{
-            padding-right:10rem;
-           
+          width: auto;
+          height: 15rem;
         }
+        @include d-flex(space-between,space-between);
+        ul{
+          @include d-flex(center,center);
+          gap:2rem;
+        }
+        // ul{
+        //   @include grid(5,3rem);
+         
+        //   li{
+        //     width: 5rem;
+        //     padding:unset;
+        //     a{
+        //       padding-right: 2rem;
+        //     }
+        //   }
+        // }
+       
+      }
+    }
+    &__wrapper{
+        @include d-flex(space-between,center);
+        img{
+            
+            height:25rem;
+        }
+      ul{
+        li{
+            padding:1rem 2rem;
+        }
+      }
         
     }
-    ul{
-        li{
-            a{
-                transition: .5s ease;
-                font-size: 2rem;
-                &:hover{
-                    color: $clr-accent; 
-                   }
-            }
-        }
-    }
-    .logo{
-        filter: brightness(90%);
-        width: auto;
-        height:100px;
-            @include mediaDeskQuery{
-                width: unset;
-                height: 5rem;
-            }
-                }
-                button{
-                    height: 4.5rem;
-                    width: 17.5rem;
-                    background-color: $clr-yellow;
-                    font-size: 2rem;
-                    font-weight: 700;
-                    border-radius: 5px;
-                    transition: 0.5s ease;
-                    border: 1px solid transparent;
-                    &:hover{
-                     background-color: $clr-accent; 
-                    }
-                    
-                }
-            }
-        }
-    }
+}

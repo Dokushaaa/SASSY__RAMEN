@@ -1,8 +1,9 @@
 :root{
     --light: #f5f5f5;
-    --dark: #131313;
-    --secondary: #222222;
-    --accent: #d9333e;
+    --dark: #26252a;
+    --secondary: #303033;
+    --secondaryalt: #515156;
+    --accent: #f8565d;
     --yellow: #efa83e
 
 }
@@ -12,6 +13,7 @@
 $clr-light: var(--light);
 $clr-dark: var(--dark);
 $clr-secondary: var(--secondary);
+$clr-secondaryalt: var(--secondaryalt);
 $clr-accent: var(--accent);
 $clr-yellow: var(--yellow);
 // $clr-accent: #f16b4e;

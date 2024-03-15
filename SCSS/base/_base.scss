@@ -20,7 +20,7 @@
 
 body{
     font-family:  "Clash-Display-Regular";
-    background-color:$clr-light;
+    background-color: $clr-dark;
     // background-color:red;
     color:rgba($clr-dark, 0.7);
     line-height: 1.6;
@@ -28,12 +28,9 @@ body{
     cursor: crosshair; 
 }
 .container{
-    max-width: 100rem;
+    max-width: 98rem;
     padding: 0 1.6rem;
     margin:0 auto;
-    
-    
-    
 }
 body.open{
  overflow: hidden;
@@ -41,6 +38,8 @@ body.open{
 }
 html{
     font-size: 10px; 
+    // overflow: hidden;
+   
     
 }
 a{
@@ -80,7 +79,7 @@ ul{
     text-transform: none;
     list-style: none;
     li{
-        color: $clr-dark;
+        color: $clr-light;
         font-family: "Clash-Display-Medium";
     i{
         font-family: "Clash-Display-Regular";
